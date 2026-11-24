@@ -18,11 +18,11 @@ function results(q){
   <div class="row"><span>Envío (${q.kg||0} kg)</span><b class="cost">${m(r.ship)}</b></div>
   <div class="row"><span>Costo total</span><b class="cost">${m(r.total)}</b></div>
   <div class="row big"><span>Precio de venta sugerido</span><span>${m(r.sug)}</span></div>
+  <div class="row"><span>Abono del 50%</span><b>${m(r.sug*0.5)}</b></div>
   <div class="row"><span>Ganancia sugerida</span><b class="${cls(r.sugProfit)}">${m(r.sugProfit)}</b></div>
   ${r.margin==null?'<div class="note">Ingresa el precio final para ver el margen y la ganancia reales.</div>':
   `<div class="row big"><span>Margen real</span><span class="${cls(r.margin)}">${pc(r.margin)}</span></div>
    <div class="row"><span>Ganancia real</span><b class="${cls(r.profit)}">${m(r.profit)}</b></div>`}
-  <div class="row big"><span>50% del precio final</span><span>${m(r.price*0.5)}</span></div>
   ${!col?'<div class="note">No aplica, el producto no se encuentra en Colombia.</div>':
    r.diff==null?'<div class="note">Ingresa el precio final para comparar con Colombia.</div>':
    `<div class="row"><span>Diferencia con Colombia</span><b class="${cls(r.diff)}">${m(r.diff)}</b></div><div class="note">${r.diff>=0?'Tu precio está por debajo del de Colombia.':'Tu precio está por encima del de Colombia.'}</div>`}</div>`;
