@@ -1,4 +1,4 @@
-const DEF={trm:3460.8,tax:7,rate:15000},KEY='kirahvi.v1';
+const DEF={trm:3645.8,tax:7,rate:15000},KEY='kirahvi.v1';
 let S=JSON.parse(localStorage.getItem(KEY)||'null')||{set:{...DEF},q:[]},tab='form',draft={},editId=null;
 const $=s=>document.querySelector(s),save=()=>localStorage.setItem(KEY,JSON.stringify(S));
 const st=()=>({trm:+S.set.trm,tax:+S.set.tax/100,rate:+S.set.rate});
