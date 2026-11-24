@@ -1,3 +1,4 @@
+
 const DEF={trm:3460.8,tax:7,rate:15000},KEY='kirahvi.v1';
 let S=JSON.parse(localStorage.getItem(KEY)||'null')||{set:{...DEF},q:[]},tab='form',draft={},editId=null;
 const $=s=>document.querySelector(s),save=()=>localStorage.setItem(KEY,JSON.stringify(S));
@@ -21,6 +22,7 @@ function results(q){
   ${r.margin==null?'<div class="note">Ingresa el precio final para ver el margen y la ganancia reales.</div>':
   `<div class="row big"><span>Margen real</span><span class="${cls(r.margin)}">${pc(r.margin)}</span></div>
    <div class="row"><span>Ganancia real</span><b class="${cls(r.profit)}">${m(r.profit)}</b></div>`}
+  <div class="row big"><span>50% del precio final</span><span>${m(r.price*0.5)}</span></div>
   ${!col?'<div class="note">No aplica, el producto no se encuentra en Colombia.</div>':
    r.diff==null?'<div class="note">Ingresa el precio final para comparar con Colombia.</div>':
    `<div class="row"><span>Diferencia con Colombia</span><b class="${cls(r.diff)}">${m(r.diff)}</b></div><div class="note">${r.diff>=0?'Tu precio está por debajo del de Colombia.':'Tu precio está por encima del de Colombia.'}</div>`}</div>`;
